@@ -1,0 +1,378 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --brand-red: #E31E24; /* Adjusted slightly for visibility or use specific brand red */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --bg-light: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #8B4513, #D2691E); /* Jaggery colors */
+    opacity: 0.8;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--brand-red);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #c0191e;
+}
+
+/* RFQ Portal */
+.rfq-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.rfq-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.progress-stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.step {
+    font-weight: 600;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.step.active {
+    color: var(--brand-red);
+}
+
+.form-step h3 {
+    margin-bottom: 1.5rem;
+}
+
+select, input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button.next-btn, button.prev-btn, button.submit-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.next-btn, button.submit-btn {
+    background-color: var(--brand-red);
+    color: white;
+}
+
+button.prev-btn {
+    background-color: #eee;
+    color: var(--text-primary);
+    margin-right: 10px;
+}
+
+.spec-badge {
+    background: rgba(227, 30, 36, 0.08);
+    color: var(--brand-red);
+    border: 1px solid rgba(227, 30, 36, 0.2);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#dynamic-spec-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+#dynamic-spec-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.interactive-map-widget {
+    background: #e9ecef;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Transparency & Tech */
+.transparency-tech {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tech-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.batch-demo {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.batch-demo input {
+    margin-bottom: 0;
+}
+
+.batch-demo button {
+    padding: 0 20px;
+    background: var(--text-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Logistics Power (Bento Grid) */
+.logistics-power {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
+}
+
+.bento-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.bento-item.capacity {
+    grid-column: span 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.big-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--brand-red);
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+.bento-item.packaging {
+    grid-column: span 2;
+}
+
+.packaging-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.pkg-placeholder {
+    flex: 1;
+    background: #e0e0e0;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+}
+
+.bento-item.presence {
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bento-item.presence h3 {
+    width: 30%;
+}
+
+.bento-item.presence p {
+    width: 65%;
+}
+
+/* Content Pillars */
+.content-pillars {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pillar {
+    text-align: center;
+}
+
+.pillar-visual {
+    height: 150px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+    padding: 10px;
+}
+
+.timeline {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.timeline li {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-item.capacity, .bento-item.packaging, .bento-item.presence {
+        grid-column: span 1;
+    }
+    .bento-item.presence {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bento-item.presence h3, .bento-item.presence p {
+        width: 100%;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}

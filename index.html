@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GudJaggery - Global Exporter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="video-background">
+            <div class="video-placeholder">
+                [HD 60fps Video: Golden jaggery pour transitioning into a shipping container]
+            </div>
+            <!-- <video autoplay muted loop id="hero-video">
+                <source src="jaggery-pour-to-container.mp4" type="video/mp4">
+            </video> -->
+        </div>
+        <div class="hero-content">
+            <h1>Global Jaggery Export Experts</h1>
+            <p>Your transparent, tech-driven partner for bulk sugar and jaggery procurement.</p>
+            <a href="#rfq-portal" class="cta-button">Start Your Inquiry</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- The RFQ Portal -->
+        <section id="rfq-portal" class="rfq-section">
+            <div class="container">
+                <h2>The Engine of Bulk Deals</h2>
+                <div class="rfq-container">
+                    <div class="progress-stepper">
+                        <div class="step active" data-step="1">1. Product Selection</div>
+                        <div class="step" data-step="2">2. Logistics/Incoterms</div>
+                        <div class="step" data-step="3">3. Specifications</div>
+                        <div class="step" data-step="4">4. Company Details</div>
+                    </div>
+
+                    <form id="rfq-form">
+                        <!-- Step 1 -->
+                        <div class="form-step active" id="step-1">
+                            <h3>Select Product Grade</h3>
+                            <select id="jaggery-grade" name="grade">
+                                <option value="">Select Grade</option>
+                                <option value="premium-cubes">Premium Cubes</option>
+                                <option value="bulk-powder">Bulk Powder</option>
+                                <option value="liquid-jaggery">Liquid Jaggery</option>
+                            </select>
+
+                            <div id="dynamic-spec-table" style="display:none; margin-top: 20px;">
+                                <h4>Certificate of Analysis (COA) Data</h4>
+                                <table>
+                                    <tr>
+                                        <td>Sucrose</td>
+                                        <td id="coa-sucrose">--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Moisture</td>
+                                        <td id="coa-moisture">--</td>
+                                    </tr>
+                                </table>
+                                <span class="spec-badge">Lab Tested</span>
+                            </div>
+                            <button type="button" class="next-btn" onclick="nextStep(2)">Next: Logistics</button>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="form-step" id="step-2" style="display: none;">
+                            <h3>Logistics & Incoterms</h3>
+                            <label>Destination Port</label>
+                            <select id="destination-port" name="destination_port">
+                                <option value="jebel-ali">Jebel Ali, Dubai</option>
+                                <option value="rotterdam">Rotterdam, Netherlands</option>
+                                <option value="singapore">Singapore</option>
+                            </select>
+                            <div class="interactive-map-widget">
+                                <!-- Placeholder for interactive map -->
+                                <p>[Interactive Map highlighting shipping route from India to <span id="selected-port-display">Jebel Ali</span>]</p>
+                            </div>
+                            <button type="button" class="prev-btn" onclick="prevStep(1)">Back</button>
+                            <button type="button" class="next-btn" onclick="nextStep(3)">Next: Specifications</button>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="form-step" id="step-3" style="display: none;">
+                            <h3>Custom Specifications</h3>
+                            <textarea name="custom_specifications" placeholder="Enter any custom requirements (e.g., packaging requests)..."></textarea>
+                            <button type="button" class="prev-btn" onclick="prevStep(2)">Back</button>
+                            <button type="button" class="next-btn" onclick="nextStep(4)">Next: Company Details</button>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="form-step" id="step-4" style="display: none;">
+                            <h3>Company Details</h3>
+                            <input type="text" name="company_name" placeholder="Company Name" required>
+                            <input type="email" name="corporate_email" placeholder="Corporate Email" required>
+                            <button type="button" class="prev-btn" onclick="prevStep(3)">Back</button>
+                            <button type="submit" class="submit-btn">Submit Inquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency & Tech -->
+        <section class="transparency-tech">
+            <div class="container">
+                <h2>Transparency & Tech: The Modern Polymath</h2>
+                <div class="tech-grid">
+                    <div class="tech-card batch-tracking">
+                        <h3>Batch Tracking Demo</h3>
+                        <p>Enter a Batch ID to see exact farm coordinates and processing date.</p>
+                        <div class="batch-demo">
+                            <input type="text" id="batch-id-input" placeholder="e.g., GJ-2023-A01" value="GJ-2023-A01">
+                            <button onclick="trackBatch()">Track</button>
+                        </div>
+                        <div id="batch-result" style="display:none; margin-top: 15px; background: #f0f0f0; padding: 10px; border-radius: 8px;">
+                            <p><strong>Coordinates:</strong> 18.5204° N, 73.8567° E (Maharashtra, India)</p>
+                            <p><strong>Processing Date:</strong> <span id="proc-date">October 15, 2023</span></p>
+                        </div>
+                    </div>
+                    <div class="tech-card ai-logistics">
+                        <h3>AI-Driven Logistics</h3>
+                        <p>We utilize automated scrapers to monitor real-time shipping freight rates and market sentiment. This allows us to offer the most competitive CIF (Cost, Insurance, and Freight) pricing dynamically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics Power Layout (Bento Grid) -->
+        <section class="logistics-power">
+            <div class="container">
+                <h2>Logistics Power</h2>
+                <div class="bento-grid">
+                    <div class="bento-item capacity">
+                        <h3>Capacity</h3>
+                        <p class="big-number">1,000+</p>
+                        <p>Metric Tons Monthly Supply Capability.</p>
+                    </div>
+                    <div class="bento-item packaging">
+                        <h3>Packaging</h3>
+                        <div class="packaging-images">
+                            <div class="pkg-placeholder">[Photo: 25kg blocks]</div>
+                            <div class="pkg-placeholder">[Photo: Powder pouches]</div>
+                            <div class="pkg-placeholder">[Photo: Private labeling]</div>
+                        </div>
+                    </div>
+                    <div class="bento-item presence">
+                        <h3>Dubai-India Corridor</h3>
+                        <p>Extensive presence and knowledge of Dubai freezones and Jebel Ali customs protocols, ensuring smooth transit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Pillars -->
+        <section class="content-pillars">
+            <div class="container">
+                <h2>Our Four Pillars</h2>
+                <div class="pillars-grid">
+                    <div class="pillar">
+                        <div class="pillar-visual">[Macro Photography of Jaggery Texture]</div>
+                        <h3>Purity</h3>
+                        <p>Sensory proof of quality.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-visual">[Interactive Chemical Analysis Charts]</div>
+                        <h3>Precision</h3>
+                        <p>Scientific proof for procurement officers.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-visual">
+                            <button class="cta-button">Request a Sample</button>
+                        </div>
+                        <h3>Partnership</h3>
+                        <p>Reducing the friction of the first deal.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-visual">
+                            <ul class="timeline">
+                                <li>Order</li>
+                                <li>QC</li>
+                                <li>Port</li>
+                                <li>Ship</li>
+                            </ul>
+                        </div>
+                        <h3>Protocol</h3>
+                        <p>Step-by-step export timeline building logistical trust.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
